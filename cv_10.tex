@@ -1,0 +1,178 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.0 (5/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+
+\header{Tim}{Fogarty}{student software engineer} % Your name and current job title/field
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{contact}
+% \begin{tikzpicture}
+% \node[align=center] {line one\\ line two} 
+% \end{tikzpicture}
+11 City Road
+Nottingham
+NG7 2JJ
+United Kingdom
+~
++44 7527061752
+~
+\href{mailto:timothy.fogo@gmail.com}{timothy.fogo@gmail.com}
+\href{https://github.com/tfogo}{GH: github.com/tfogo}
+Twitter: @tfogo
+Stack Overflow: tfogo
+\section{programming}
+JavaScript 
+(Node.js, AngularJS)
+~
+CSS3 \& HTML5
+~
+Some Java, PHP, MATLAB, \& C
+\section{tools}
+Git
+Grunt
+Emacs
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\color{blue}education}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2011--now}
+{Bachelor {\normalfont of Natural Sciences}}
+{The University of Nottingham, United Kingdom}
+{Specialization in Mathematics and Physics}
+%------------------------------------------------
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\color{red}experience}
+
+\begin{entrylist}
+\entry
+{2013--now}
+{Imperial College London}
+{London, United Kingdom}
+{\emph{Web programming contractor} \\
+I built and maintain projectpal.org for Imperial College. The site is used nationally to connect medical students to exciting projects. Used annually by 400 intercalated BSc students at Imperial.}
+%------------------------------------------------
+\end{entrylist}
+
+\section{\color{orange}projects}
+
+\begin{entrylist}
+\entry
+{}
+{ProjectPal.org}
+{projectpal.org \& node.projectpal.org}
+{\emph{PHP (legacy), M*EAN Stack (*M = MySQL)} \\
+Originally written in PHP, I'm now reimplementing it in Node. I used sequelize as an ORM for MySQL. I discovered how useful promises could be while working on this.}
+%------------------------------------------------
+\end{entrylist}
+
+\begin{entrylist}
+\entry
+{}
+{EUPhorics}
+{euphorics.herokuapp.com}
+{\emph{Node.js, D3.js} \\
+Discover European music with this interactive quiz. I used TopoJSON, SVGs, and D3 to make the interactive map.}
+%------------------------------------------------
+\end{entrylist}
+
+\begin{entrylist}
+\entry
+{}
+{PodLearn.com}
+{podlearn.herokuapp.com}
+{\emph{MEAN Stack} \\
+A peer-reviewed platform for medical education podcasts backed by the University of Liverpool.}
+%------------------------------------------------
+\end{entrylist}
+
+\begin{entrylist}
+\entry
+{}
+{Investigation into Semiconductors}
+{github.com/tfogo/GaAs-Potentials}
+{\emph{MATLAB, C} \\
+I built a numerical model of quantum dots formed by the out diffusion of interstitial Mn$^{2+}$ donors in p-type GaAs. The very heavy computational routine was implemented in C for efficiency.}
+%------------------------------------------------
+\end{entrylist}
+
+\begin{entrylist}
+\entry
+{}
+{VoiceCopter}
+{github.com/tfogo/voicecopter}
+{\emph{Node.js} \\
+Control a Parrot AR Drone 2 with voice commands. Work in progress.}
+%------------------------------------------------
+\end{entrylist}
+
+\section{\color{brown}publications}
+
+{Dipender Gill, Tim Fogarty, Nathan Mountford, Christopher Tang, Elizabeth Yang. \emph{Extra-Curricular Academic Opportunities Amongst Medical Students.} Poster session presented at: National Medical Education Conference; 2013 Jun 1; Exeter, UK.}
+
+\newpage
+
+\section{\color{green}activities}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2013--now}
+{Hack Secretary}
+{HackSoc}
+{Responsible for finding and advertising external hackathons and organizing transportation to them.}
+%------------------------------------------------
+\entry
+{2012--now}
+{Treasurer, Vice-President, and President}
+{Public Speaking Society}
+{}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\color{purple}interests}
+
+Hackathons, competitive programming (e.g. ICPC, HackerRank, Project Euler), quantum computing, reading, running.
+
+\end{document}

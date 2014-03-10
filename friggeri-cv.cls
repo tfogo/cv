@@ -14,6 +14,7 @@
 %%%%%%%%%%
 
 \RequirePackage{xcolor}
+\RequirePackage{graphicx}
 
 \definecolor{white}{RGB}{255,255,255}
 
@@ -31,6 +32,7 @@
   \colorlet{green}{gray}
   \colorlet{orange}{gray}
   \colorlet{purple}{gray}
+  \colorlet{brown}{gray}
   \colorlet{red}{gray}
   \colorlet{blue}{gray}
   \colorlet{fillheader}{white}
@@ -47,16 +49,16 @@
 %%%%%%%%%
 
 \RequirePackage[quiet]{fontspec}
-\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
+% \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+ \newfontfamily\bodyfont[]{Helvetica Neue}
+ \newfontfamily\thinfont[]{Helvetica Neue UltraLight}
+ \newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light} 
 
-\setmathfont{XITS Math}
+%\setmathfont{XITS Math}
 
 %%%%%%%%%%
 % Header %
@@ -101,7 +103,8 @@
         red\or%
         orange\or%
         green\or%
-        purple\else%
+        purple\or%
+        brown\else%
         headercolor\fi%
     } #1#2#3%
   }%
@@ -112,7 +115,7 @@
   \par\vspace{\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
-    \@sectioncolor #1%
+    #1%
   }
   \par\vspace{\parskip}
 }
@@ -149,7 +152,7 @@
 %%%%%%%%%%%%%%
 % Side block %
 %%%%%%%%%%%%%%
-
+\definecolor{mycolor}{RGB}{77,77,77}
 \RequirePackage[absolute,overlay]{textpos}
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
@@ -161,6 +164,16 @@
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
   \obeycr
+
+  \begin{tikzpicture}
+    \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{tim6.jpg}};
+    \draw [mycolor, rounded corners=0.5*\textwidth, line width=1pt] 
+    (current bounding box.north west) -- 
+    (current bounding box.north east) --
+    (current bounding box.south east) --
+    (current bounding box.south west) -- cycle
+    ;
+  \end{tikzpicture}
 }{%
   \restorecr
   \end{flushright}
@@ -175,6 +188,7 @@
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
 
 \DeclareFieldFormat[article]{title}{#1\par}
+\DeclareFieldFormat[book]{title}{#1\par}
 \DeclareFieldFormat[inproceedings]{title}{#1\par}
 \DeclareFieldFormat[misc]{title}{#1\par}
 \DeclareFieldFormat[report]{title}{#1\par}
@@ -198,6 +212,27 @@
   }
   \par\vspace{0.3\baselineskip}
 }
+
+\DeclareBibliographyDriver{book}{%
+  \printfield{title}%
+  \newblock%
+  \printnames{author}%
+  \par%
+  \newblock%
+  {%
+    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \printlist{publisher}%
+    \setunit*{\addcomma\space}%
+    \printfield{note}%
+    \setunit*{\addcomma\space}%
+    \printfield{year}%
+    \setunit{\addcomma\space}%
+    \printlist{location}%
+    \newunit%
+  }
+  \par\vspace{0.3\baselineskip}
+}
+
 
 \DeclareBibliographyDriver{inproceedings}{%
   \printfield{title}%
